@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
+import { StreamChat } from "stream-chat";
 import {
-  useCreateChatClient,
   Chat,
   Channel,
   ChannelHeader,
@@ -10,32 +10,23 @@ import {
   MessageList,
   Thread,
   Window,
-} from 'stream-chat-react';
+  useCreateChatClient,
+} from "stream-chat-react";
 
-import 'stream-chat-react/dist/css/v2/index.css';
+import "stream-chat-react/dist/css/v2/index.css";
 
-const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
-const userId = 'user_2yx29jZgAONcGkfnnEcuCcvyYbE';
-const userName = 'happy';
-const userToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidXNlcl8yeXgyOWpaZ0FPTmNHa2ZubkVjdUNjdnlZYkUifQ.KXtGyPbY7J5Kc_HvrQswwAwavhYFP9ebu7mzq4JorWI';
+const ChatForum = ({ clerkUser, slug }) => {
+  const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
+  const userToken = clerkUser.token;
+  const userId = clerkUser.id;
+  const userName = clerkUser.name;
 
-const user = {
-  id: userId,
-  name: userName,
-  image: `https://getstream.io/random_png/?name=${userName}`,
-};
+  const user = {
+    id: userId,
+    name: userName,
+    image: `https://getstream.io/random_png/?name=${userName}`,
+  };
 
-const getChannelName = (slug) => {
-  const formatted = slug
-    .replace(/[-_]/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-
-  return `${formatted} Discussion`;
-};
-
-
-const ChatForum = ({ slug }) => {
   const [channel, setChannel] = useState();
   const client = useCreateChatClient({
     apiKey,
@@ -46,18 +37,13 @@ const ChatForum = ({ slug }) => {
   useEffect(() => {
     if (!client) return;
 
-    const channel = client.channel('messaging', slug, {
+    const channel = client.channel("messaging", slug, {
       image: `https://getstream.io/random_png/?name=${slug}`,
+      name: slug.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
       members: [userId],
     });
 
-    const setupChannel = async () => {
-      await channel.watch();
-      await channel.update({ name: getChannelName(slug) });
-      setChannel(channel);
-    };
-
-    setupChannel();
+    setChannel(channel);
   }, [client]);
 
   if (!client)

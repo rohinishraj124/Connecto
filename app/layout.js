@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata = {
-  title: 'Chatly',
+  title: 'Connecto',
   description: 'A modern chat app built with Next.js',
 }
 

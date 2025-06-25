@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
-import { useUser } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -36,8 +36,8 @@ export default function Navbar() {
     };
   }, []);
 
-  const user = useUser();
-  console.log(user.user?.id)
+  // const user = useUser();
+  // console.log(user.user?.id)
 
   return (
     <nav className="bg-white shadow sticky top-0 z-50" ref={navRef}>
