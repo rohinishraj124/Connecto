@@ -82,7 +82,14 @@ export default function Navbar() {
           >
             Chat
           </Link>
+          <Link
+            href="/contact"
+            className="hover:text-blue-600 transition cursor-pointer"
+          >
+            Contact us
+          </Link>
         </div>
+        
 
         {/* Right section: always show user button */}
         <div className="flex items-center">
