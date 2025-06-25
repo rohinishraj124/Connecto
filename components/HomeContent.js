@@ -119,7 +119,7 @@ export default function HomeContent() {
     In a world full of cluttered chat tools, we aim to simplify how people engage in meaningful conversations across topics and communities.
     <br /><br />
     Our core lies in the <strong>Forum system</strong> — a clean, intuitive space for group discussions, knowledge exchange, and collaborative thinking.
-    Whether you're here to learn, contribute, or connect around shared interests, Connecto makes group conversation seamless and distraction-free.
+    Whether you&apos;re here to learn, contribute, or connect around shared interests, Connecto makes group conversation seamless and distraction-free.
   </p>
 </section>
 
