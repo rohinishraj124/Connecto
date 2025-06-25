@@ -1,6 +1,6 @@
 "use client";
 
-import { Lock, MessageCircle, Users } from "lucide-react";
+import { Lock, Users } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -66,20 +66,14 @@ export default function HomeContent() {
             Welcome to <span className="text-indigo-600">Connecto</span>
           </h1>
           <p className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
-            Simple, secure 1-on-1 chats and vibrant forum discussions — all in one place.
+            Seamless and vibrant forum discussions — all in one place.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex justify-center gap-4">
             <Link
               href="/forums"
               className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition duration-200"
             >
               Explore Forums
-            </Link>
-            <Link
-              href="/chat"
-              className="bg-white text-indigo-600 px-6 py-3 rounded-xl font-semibold border border-indigo-600 hover:bg-indigo-50 transition duration-200"
-            >
-              Private Chat
             </Link>
           </div>
         </div>
@@ -96,13 +90,8 @@ export default function HomeContent() {
       {/* Features Section */}
       <section
         id="features"
-        className="max-w-6xl mx-auto px-4 py-24 grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center"
+        className="max-w-6xl mx-auto px-4 py-24 grid gap-12 sm:grid-cols-1 md:grid-cols-2 text-center"
       >
-        <FeatureCard
-          icon={<MessageCircle className="w-8 h-8 text-indigo-600 mb-4 mx-auto" />}
-          title="Private Messaging"
-          description="Fast and lightweight one-on-one conversations — no clutter, just chat."
-        />
         <div ref={ref}>
           <FeatureCard
             icon={<Users className="w-8 h-8 text-indigo-600 mb-4 mx-auto" />}
@@ -117,23 +106,23 @@ export default function HomeContent() {
         />
       </section>
 
-      {/* About Us Section */}
-      <section
-        id="about"
-        className="max-w-4xl mx-auto px-4 pb-32 text-center"
-      >
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          About Us
-        </h2>
-        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto text-center md:text-left">
-          <strong>Connecto</strong> is crafted with passion to enable seamless one-on-one conversations and public discussions.
-          Inspired by modern communication challenges, we focus on speed, simplicity, and intuitive design — without unnecessary complexity
-          like group creation or bloated social features.
-          <br /><br />
-          At the heart of Connecto lies our <strong>Forum system</strong> — an open space for thoughtful discussions, idea sharing, and building communities.
-          Whether you&apos;re engaging privately or exploring topics publicly, Connecto keeps conversations fast, secure, and distraction-free.
-        </p>
-      </section>
+{/* About Us Section */}
+<section
+  id="about"
+  className="max-w-4xl mx-auto px-4 pb-32 text-center"
+>
+  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+    About Us
+  </h2>
+  <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto text-center md:text-left">
+    <strong>Connecto</strong> is built with a clear mission: to provide a focused, modern platform for open forum-style communication.
+    In a world full of cluttered chat tools, we aim to simplify how people engage in meaningful conversations across topics and communities.
+    <br /><br />
+    Our core lies in the <strong>Forum system</strong> — a clean, intuitive space for group discussions, knowledge exchange, and collaborative thinking.
+    Whether you're here to learn, contribute, or connect around shared interests, Connecto makes group conversation seamless and distraction-free.
+  </p>
+</section>
+
     </main>
   );
 }

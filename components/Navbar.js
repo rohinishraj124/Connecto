@@ -77,12 +77,6 @@ export default function Navbar() {
             Forums
           </Link>
           <Link
-            href="/chat"
-            className="hover:text-blue-600 transition cursor-pointer"
-          >
-            Chat
-          </Link>
-          <Link
             href="/contact"
             className="hover:text-blue-600 transition cursor-pointer"
           >
@@ -113,13 +107,6 @@ export default function Navbar() {
             className="block text-gray-700 cursor-pointer"
           >
             Forums
-          </Link>
-          <Link
-            href="/chat"
-            onClick={() => setOpen(false)}
-            className="block text-gray-700 cursor-pointer"
-          >
-            Chat
           </Link>
           <Link
             href="/contact"
