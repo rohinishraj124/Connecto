@@ -121,6 +121,13 @@ export default function Navbar() {
           >
             Chat
           </Link>
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="block text-gray-700 cursor-pointer"
+          >
+            Contact us
+          </Link>
         </div>
       )}
     </nav>
