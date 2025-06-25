@@ -24,13 +24,13 @@ export default function ContactPage() {
     <main className="bg-gradient-to-b from-indigo-100 via-white to-white min-h-screen flex flex-col items-center px-4 py-16">
       <h1 className="text-4xl font-extrabold text-indigo-700 mb-8">Contact Us</h1>
       <p className="max-w-xl text-center text-gray-700 mb-12">
-        Have questions, feedback, or want to say hello? We'd love to hear from you. Please fill out the form below and we'll get back to you soon.
+        Have questions, feedback, or want to say hello? We&apos;d love to hear from you. Please fill out the form below and we&apos;ll get back to you soon.
       </p>
 
       {submitted ? (
         <div className="bg-white p-8 rounded-2xl shadow-xl max-w-xl w-full text-center text-indigo-700">
           <h2 className="text-2xl font-semibold mb-4">Thank you!</h2>
-          <p>We’ve received your message and will respond shortly.</p>
+          <p>We&apos;ve received your message and will respond shortly.</p>
         </div>
       ) : (
         <form
